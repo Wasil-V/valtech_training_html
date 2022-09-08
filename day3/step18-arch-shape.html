@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc</title>
+    <style>
+        canvas{
+            margin: 50px auto;
+            display: block;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="500" height="500"></canvas>
+    <script>
+        var ctx=document.getElementById("can").getContext("2d");
+
+        ctx.beginPath();
+        ctx.arc(150,120,100,0,(Math.PI/180)*360,true);
+        ctx.closePath();
+        ctx.fillStyle= "blue";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(150,120,50,0,(Math.PI/180)*360,true);
+        ctx.closePath();
+        ctx.fillStyle= "red";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(350,350,100,0,(Math.PI/180)*360,true);
+        ctx.closePath();
+        ctx.fillStyle= "red";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(350,350,50,0,(Math.PI/180)*360,true);
+        ctx.closePath();
+        ctx.fillStyle= "blue";
+        ctx.fill();
+        ctx.stroke();
+    </script>
+
+</body>
+</html>

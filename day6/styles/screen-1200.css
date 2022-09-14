@@ -1,0 +1,12 @@
+section{
+    width: 1800px;
+    height: 600px;
+    background-color: darkred;
+   }
+   article{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: rgb(182, 24, 245);
+    float: left;
+   } 

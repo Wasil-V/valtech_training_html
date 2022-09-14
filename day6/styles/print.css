@@ -1,0 +1,13 @@
+section{
+    width: 1800px;
+    height: 600px;
+    border: 10px solid black;
+   }
+   article{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: blue;
+    border: 10px solid black;
+    float: left;
+   } 

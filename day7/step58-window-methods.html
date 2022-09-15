@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var win = null;
+        function google(){
+           win = window.open("http://www.google.com", "first", "status,height=600,width=600 ");
+        }
+        function googleClose(){
+            win.close();
+        }
+        function changewin(){
+            win.location= "http://tooncrush.com";
+        }
+        // window.alert();
+        // window.prompt();
+        window.confirm();
+
+
+    </script>
+</head>
+<body>
+    <button onclick="google()">Google</button>
+    <button onclick="googleClose()">Close</button>
+    <button onclick="changewin()">change</button>
+</body>
+</html>

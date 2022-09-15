@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var fav= [5,3,4,7,12,8,33];
+        var favNum = [
+            {name : "Archies ", favNume:12 },
+            {name : "Anmol ", favNume: 2},
+            {name : "Sharan", favNume: 4},
+            {name : "Sneha ", favNume: 8},
+            {name : "Harshitha", favNume: 9},
+            {name : "Moulidhar", favNume: 13},
+            {name : "Jai Kumar", favNume: 6},
+            {name : "Pavan", favNume: 5},
+            {name : "Wasil", favNume: 7},
+            {name : "Saniya", favNume: 16},
+            {name : "Himani", favNume: 11},
+            {name : "Anirudh", favNume: 17},
+            {name : "Mihir", favNume: 22},
+            {name : "Vijay", favNume: 1}
+        ];
+        function sortIt(val1,val2){
+            console.log(val1,val2)
+            if(val1.favNume > val2.favNume){
+                return 1;
+            }else if(val1.favNume < val2.favNume){
+                
+                return -1;
+            }else{
+                
+                return 0;
+            }
+
+        }
+        function sortreturn(){
+            var sortName = favNum.sort(sortIt);
+            for(var i=0;i<14;i++){
+
+                document.getElementById("log").innerHTML+= "<li>"+sortName.name[i]+ is +sortName.favNume[i]+ "</li>";
+            }
+        
+        }
+    </script>
+</head>
+<body>
+    <h1>Sorted Array is :  </h1>
+    <li id="log"></li>
+    <button onclick="sortreturn()">Sort</button>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Remove </title>
+    <style>
+        .container{
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            background-color: coral;
+            overflow: scroll;
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            margin: 2px;
+            background-color: yellow;
+            float: left;
+            font-size: 40px;
+            line-height: 100px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container div:hover{
+            background-color: aqua;
+            box-shadow: 10px 10px 10px solid white;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var count=1;
+        function clickHandler(){
+            var box = document.createElement("div");
+            box.textContent=count;
+            document.getElementsByClassName("container")[0].appendChild(box);
+            count++;
+        }
+        function removefirstbox(){
+            var box=document.getElementsByClassName("container")[0].firstChild;
+            if(box){
+                
+                document.getElementsByClassName("container")[0].removeChild(box);
+            }
+            else{
+                alert("No boxes to remove");
+            }
+        }
+        function removeLastbox(){
+            var box=document.getElementsByClassName("container")[0].lastChild;
+            if(box){
+                
+                document.getElementsByClassName("container")[0].removeChild(box);
+            }
+            else{
+                alert("No boxes to remove");
+            }
+        }
+        function removeClickHandler(){
+            document.getElementsByTagName("button")[0].removeEventListener("click",clickHandler);
+        }
+            
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click",removeClickHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click",removefirstbox);
+            document.getElementsByTagName("button")[3].addEventListener("click",removeLastbox);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding Boxes</button>
+    <button>Remove first Box</button>
+    <button>Remove Last Box</button>
+    <div class="container"></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and Remove </title>
+    <style>
+        .container{
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            background-color: coral;
+            overflow: scroll;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 2px;
+            background-color: yellow;
+            float: left;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* .container div:hover{
+            background-color: aqua;
+            box-shadow: 0px 0px 10px solid black;
+            cursor: pointer; */
+        
+        span{
+            background-color: black;
+            color: aliceblue;
+            float: right;
+            padding: 1px;
+            margin: 1px 1px;
+        }
+        span:hover{
+            background-color: brown;
+            cursor: default;
+        }
+    </style>
+    <script>
+        var count=1;
+        var container = null;
+        var ri= null;
+        // function removeSelected(evt){
+        //     if(!evt.target.getAttribute("class",container))
+        //    container.removeChild(evt.target);
+        // }
+        function clickHandler(evt){
+            if(evt.target.tagName==="SPAN")
+            document.getElementsByClassName("container")[0].removeChild(evt.target.parentElement);
+            // $(evt.target.parentNode).hide(500);
+            
+        }
+            
+        function init(){
+        container=document.getElementsByClassName("container")[0];
+        // container.addEventListener("click",removeSelected)
+        ri =setInterval(function(){
+            container.innerHTML+="<div class='box'><span>X</span></div>";
+            count++
+            if( count > 20){
+                clearInterval(ri);
+            }
+        },100)
+        document.getElementsByClassName("container")[0].addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+        
+    </script>
+</head>
+<body>
+    <!-- <button>Add Box</button> -->
+    <div class="container"></div>
+</body>
+</html>

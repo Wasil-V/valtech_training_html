@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var hero={
+            title:"Superman",
+            firstname:"Clark",
+            lastname:"Kent",
+            power:10
+        };
+        // var {title : herotile, firstname : herofirstname, lastname : herolastname, power: heropower}=hero;
+        // console.log(herolastname);
+        // herolastname="Wayne";
+        // console.log(herolastname);
+
+
+        // var favheroes=['ironman','hulk','spiderman'];
+        // var[firsthero,secondhero,thirdhero]=favheroes;
+        // // function gethero(){
+        // //     return ['ironman','hulk','spiderman']
+        // // }
+        // // var[firsthero,secondhero,thirdhero]=gethero();
+        
+        // console.log(firsthero);
+        // console.log(secondhero.toUpperCase());
+
+        var all = {...hero};
+        console.log(all.title);
+
+        var all = JSON.parse(JSON.stringify(hero))
+        console.log(all.title);
+        console.log(all.lastname);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

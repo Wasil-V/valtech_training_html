@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //problem
+        // var cart={
+        //     getCostprice: function init(){
+        //         return 100;
+        //     },
+        //     getSellingPrice: function init(){
+        //         var calculateProfit=function(){
+        //             return this.getCostprice()*0.2;
+        //         }
+        //         return this.getCostprice() + calculateProfit();
+        //     }
+        // };
+        // console.log(cart.getSellingPrice());
+        // var cart={
+        //     getCostprice: function init(){
+        //         return 100;
+        //     },
+        //     getSellingPrice: function " "(){
+        //         var calculateProfit=function(){
+        //             return this.getCostprice()*0.2;
+        //         }
+        //         return this.getCostprice() + calculateProfit.call(this);
+        //     }
+        // };
+        // console.log(cart.getSellingPrice());
+        // var cart={
+        //     getCostprice: function (){
+        //         return 100;
+        //     },
+        //     getSellingPrice: function (){
+        //         var calculateProfit=function(){
+        //             return this.getCostprice()*0.2;
+        //         }
+        //         return this.getCostprice() + calculateProfit.apply(this);
+        //     }
+        // };
+        // console.log(cart.getSellingPrice());
+        var cart={
+            getCostprice: function (){
+                return 100;
+            },
+            getSellingPrice: function(){
+                var calculateProfit=()=>{
+                    return this.getCostprice()*0.2;
+                }
+                return this.getCostprice() + calculateProfit();
+            }
+        };
+        console.log(cart.getSellingPrice());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

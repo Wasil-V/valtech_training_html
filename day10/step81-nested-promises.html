@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var firstPromise = function(){
+            return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(true){
+                    resolve(console.log("resolve Message from First Promise"),console.log(secondPromise()))
+                }
+                else{
+                    reject("Reject Error from first promise");
+                }
+            },3000)
+            })
+        }
+        var secondPromise = function(){
+            return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("resolve Message from second Promise");
+                }
+                else{
+                    reject("Reject Error from second promise");
+                }
+            },1000)
+            })
+        }
+        console.log(Promise.all([firstPromise()]));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

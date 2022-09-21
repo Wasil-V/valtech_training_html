@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var obj1 = {title: "obj1"};
+        // var obj2 =new Object();
+        // var obj3 =Object.create(null);
+        var hero = Object.create(null);
+        Object.defineProperty(hero,"title",{value : "batman",writable : true, enumerable : true,configurable : true});
+        console.log(hero.title);
+        
+        for(var prop in hero){
+            console.log(prop,hero[prop]);
+        }
+        Object.defineProperty(hero,"title",{value : "joker",writable : false, enumerable : false,configurable : false});
+        for(var prop in hero){
+            console.log(prop,hero[prop]);
+        }
+        console.log(hero.title);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

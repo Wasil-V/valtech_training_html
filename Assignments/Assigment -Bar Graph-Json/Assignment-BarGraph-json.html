@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Bar Graph JSON</title>
+    <style>
+
+        button{
+            width: 520px;
+            margin: 100px auto;
+            display: block;
+        }
+
+        #can{
+            border: 2px solid rgb(235, 73, 23);
+            margin: 100px auto;
+            display: block;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <canvas id="can" width="600" height="600"></canvas>
+    <button>Get Heroes Bar Chart</button>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d");
+        
+        var i=60;
+        var xhr = new XMLHttpRequest;
+        xhr.addEventListener("readystatechange", xhrHandler);
+        function xhrHandler(evt){
+            if(evt.target.readyState === 4){
+                      
+                    JSON.parse(evt.target.responseText).data.forEach(val => {
+                            ctx.font = "10px Arial";
+                            drawBar(ctx, 50, 50, 50, 550, "black" );
+                            drawBar(ctx, 50, 550, 550, 550, "black" );
+                            ctx.fillText("Agent Name", 250, 590)
+                            ctx.fillText("0", 10, 550);
+                            ctx.fillText("100", 10, 450);
+                            ctx.fillText("200", 10, 350);
+                            ctx.fillText("300", 10, 250);
+                            ctx.fillText("400", 10, 150);
+                            ctx.fillText("500", 10, 50);
+                            ctx.fillText("Cases Handled", 40, 30);
+
+                            drawBar(ctx, i, 550, i, 550-val.casesHandled, "black");
+                            drawBar(ctx, i, 550-val.casesHandled, i+50, 550-val.casesHandled, "black");
+                            drawBar(ctx, i+50, 550-val.casesHandled, i+50, 550, "black");
+                            drawBar(ctx, i+50, 550, i, 550, "black");
+   
+
+                            ctx.fillStyle = `${val.col}`
+                            ctx.fillRect(i,550-val.casesHandled, 50, val.casesHandled);
+                            ctx.fillText(val.agentName, i+15, 570);
+                            i+=80;
+                            
+                    })           
+            }
+        }
+
+        function drawBar(ctx, X, Y, endX, endY,color){
+            ctx.save();
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(X,Y);
+            ctx.lineTo(endX,endY);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function clickHandler(){
+            xhr.open("get", "data.json", true);
+            xhr.send();
+        }
+        function init(){
+            
+            document.querySelector("button").addEventListener("click", clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+
+</body>
+</html>

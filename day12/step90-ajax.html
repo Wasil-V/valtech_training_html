@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: darkgoldenrod;
+            width: 600px;
+            height: 200px;
+            margin: 50px auto;
+            overflow: auto;
+            padding: 5px;
+        }
+        button{
+            display: block;
+            margin: 5px auto;
+        }
+    </style>
+    <script src="lib/jquery.js"></script>
+    <script>
+        let promise=null;
+        $(function(){
+            $("button").click(function(){
+            //     // $('.container').load("lib/data.txt");
+            //     $.getJSON("lib/data.json",function(res,status,jqxhr){
+            //         // $(".container").text(JSON.stringify(res))
+            //         $.each(res,function(idx,val){
+            //             console.log(val.participant)
+            //         })
+            //     })
+            // })
+            // promise = $.getJSON("lib/data.json");
+            // promise.done(function(res,status,jqxhr){
+            //     $(res.root.participant).each(function(idx,val){
+            //         $(".container").append("<p>"+val.firstname+"</p>")
+            //     })
+            // })
+            promise =$.ajax({
+                url:"lib/data.txt",
+                cache:false,
+                timeout:3000
+            });
+            promise.done(function(res,status,jqxhr){
+                // $(res.root.participant).each(function(idx,val){
+                //     $(".container").append("<p>"+val.firstname+"</p>")
+                // $(res.root.participant).each(function(idx,val){
+                    $(".container").append(res)
+                })
+            
+            
+        })})
+    </script>
+
+</head>
+<body>
+    <button>Get Data</button>
+    <div class="container"></div>
+</body>
+</html>

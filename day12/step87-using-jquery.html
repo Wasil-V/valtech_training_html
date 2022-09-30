@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script>
+        
+        $(()=>{
+            //$(".box2").css("border","solid 2px red")
+            // $("ul>li:first").css("border","solid 2px red")
+            // $("li:even").css("border","solid 2px red")
+            // $("li:odd").css("border","solid 2px red")
+            // $("li:eq(6)").css("border","solid 2px red")
+            // $("li:gt(6)").css("border","solid 2px red")
+            // $("li:lt(6)").css("border","solid 2px red")
+            // $(":header").css("border","solid 2px red")
+            // $("p:parent").css("border","solid 2px red")
+            // $("li:contains('list 5')").css("border","solid 2px red")
+            // $("ol:has(.box2)").css("border","solid 2px red")
+            // $("li[class]").css("border","solid 2px black")
+            // $("li[class=box3]").css("border","solid 2px black")
+            $("li[class=box3]").css("border","solid 2px black")
+            $("li[class^=box]").css("border","solid 2px black")
+        })
+        
+    </script>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li>list 5</li>
+        
+    </ul>
+    <h2>Heading 2</h2>
+    <ol>
+        <li class="box1">list 1</li>
+        <li class="box2">list 2</li>
+        <li class="box3">list 3</li>
+        <li class="box4">list 4</li>
+        <li class="box5">list 5</li>
+        
+    </ol>
+    <h3>Heading 3</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quam sapiente dolor omnis iste eaque repudiandae, adipisci exercitationem inventore qui necessitatibus ad saepe dicta, corrupti culpa debitis, ullam ratione dolore.
+    </p>
+    <p id="para">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste numquam reprehenderit omnis blanditiis unde dolore voluptatibus eum facere, suscipit pariatur quos, consequatur consequuntur laborum possimus aperiam qui ut officiis id.
+    </p>
+</body>
+</html>
